@@ -1,0 +1,12 @@
+{
+  "name": "surgimate-modernization-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "screenshots": "node scripts/capture-screenshots.mjs",
+    "screenshots:install": "npx playwright install chromium"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}

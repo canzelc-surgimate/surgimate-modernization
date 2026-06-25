@@ -126,7 +126,10 @@
       background: #0a0a0a; font-size: 11px; color: var(--muted);
     }
     .browser-body { min-height: 280px; position: relative; }
-  /* Classic mock */
+    .browser-body--shot { padding: 0; min-height: 0; line-height: 0; background: #000; }
+    .browser-shot { display: block; width: 100%; height: auto; }
+    .screenshot-caption { font-size: 11px; color: var(--muted); margin-top: 6px; text-align: center; }
+    .screenshot-row { margin-top: 28px; }
     .mock-classic .browser-body { background: var(--classic-bg); }
     .mock-classic .c-header {
       background: var(--classic-header); color: #fff; padding: 6px 12px;
@@ -353,84 +356,82 @@
         <div class="split">
           <div>
             <div class="split-label classic">Before — Classic UI</div>
-            <div class="browser mock-classic">
-              <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">app.surgimate.com — classic</div></div>
-              <div class="browser-body">
-                <div class="c-header"><span>SURGIMATE</span><span>Search · Reports · Admin ▾</span></div>
-                <div class="c-tabs">
-                  <span>Home</span><span>Overview</span><span class="on">Dashboards</span><span>Agenda</span><span>Reports</span><span>Calendar</span>
-                </div>
-                <div class="c-content">
-                  <div class="c-well">
-                    <strong>Superset iframe embed</strong> — external analytics UI, different look &amp; feel from the app.
-                    <div class="c-iframe">📊 Apache Superset dashboard<br>styling mismatch · slow context switch</div>
-                  </div>
-                </div>
+            <div class="browser">
+              <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">app.surgimate.com — Overview (classic)</div></div>
+              <div class="browser-body browser-body--shot">
+                <img class="browser-shot" src="assets/screenshots/classic-overview.png" alt="Classic Surgimate Overview tab with surgeries table and saved views">
               </div>
             </div>
+            <p class="screenshot-caption">Live dev capture · ZTEST client · flag off</p>
           </div>
           <div>
             <div class="split-label modern">After — Modern Launch Pad</div>
-            <div class="browser mock-modern">
-              <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">app.surgimate.com — modern</div></div>
-              <div class="browser-body" style="min-height:320px">
-                <div class="m-nav">
-                  <span class="m-logo">SURGIMATE</span>
-                  <div class="m-tabs">
-                    <span class="m-tab on">Home</span><span class="m-tab">Dashboards</span><span class="m-tab">Agenda</span><span class="m-tab">Calendar</span><span class="m-tab">Events ▾</span>
-                  </div>
-                  <span class="m-search">Patient search…</span>
-                  <span class="m-surgi">✦ Ask Surgi</span>
-                  <span class="m-avatar">CA</span>
-                </div>
-                <div class="m-hero">
-                  <h3>Good morning — your Launch Pad</h3>
-                  <p>Drag, resize, and personalize widgets. Each drills into its full tab.</p>
-                </div>
-                <div class="m-grid">
-                  <div class="m-widget wide"><div class="m-widget-icon">📋</div><strong>Overview widget</strong><span>Was its own tab — now on Home</span></div>
-                  <div class="m-widget"><div class="m-widget-icon">✓</div><strong>Agenda</strong><span>→ Agenda tab</span></div>
-                  <div class="m-widget"><div class="m-widget-icon">📈</div><strong>KPI chart</strong><span>→ Dashboards</span></div>
-                </div>
+            <div class="browser">
+              <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">app.surgimate.com — Home (modern)</div></div>
+              <div class="browser-body browser-body--shot">
+                <img class="browser-shot" src="assets/screenshots/modern-launch-pad.png" alt="Modern Launch Pad home with draggable widgets in dark mode">
               </div>
             </div>
+            <p class="screenshot-caption">Live dev capture · same client · flag on · dark mode</p>
           </div>
         </div>
       </div>
       <div class="compare-panel" data-panel="classic">
-        <div class="browser mock-classic" style="max-width:800px;margin:0 auto">
-          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">classic experience</div></div>
-          <div class="browser-body">
-            <div class="c-header"><span>SURGIMATE</span><span>Flat header · FontAwesome · Bootstrap · SCSS · Pug templates</span></div>
-            <div class="c-tabs">
-              <span>Home</span><span class="on">Overview</span><span>Dashboards</span><span>Agenda</span><span>Reports</span>
-            </div>
-            <div class="c-content">
-              <div class="c-well">Separate top-level tabs for Overview, Reports, Case List, and Ad-Hoc reports. Dashboards embedded via Superset.</div>
-              <table class="c-table"><tr><th>Patient</th><th>Date</th><th>Status</th></tr><tr><td>Gray grid table</td><td>03/15</td><td>TBD</td></tr></table>
-            </div>
+        <div class="browser" style="max-width:900px;margin:0 auto">
+          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">classic — Overview tab</div></div>
+          <div class="browser-body browser-body--shot">
+            <img class="browser-shot" src="assets/screenshots/classic-overview.png" alt="Classic Overview surgeries search">
           </div>
         </div>
       </div>
       <div class="compare-panel" data-panel="modern">
-        <div class="browser mock-modern" style="max-width:900px;margin:0 auto">
-          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">modern launch pad</div></div>
-          <div class="browser-body" style="min-height:360px">
-            <div class="m-nav">
-              <span class="m-logo">SURGIMATE</span>
-              <div class="m-tabs"><span class="m-tab on">Home</span><span class="m-tab">Dashboards</span><span class="m-tab">Agenda</span></div>
-              <span class="m-surgi">✦ Ask Surgi</span><span class="m-avatar">CA</span>
+        <div class="browser" style="max-width:900px;margin:0 auto">
+          <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">modern — Launch Pad</div></div>
+          <div class="browser-body browser-body--shot">
+            <img class="browser-shot" src="assets/screenshots/modern-launch-pad.png" alt="Modern Launch Pad home workbench">
+          </div>
+        </div>
+      </div>
+
+      <div class="screenshot-row">
+        <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:12px">Agenda — classic vs modern</h3>
+        <div class="split">
+          <div>
+            <div class="browser">
+              <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">classic Agenda</div></div>
+              <div class="browser-body browser-body--shot">
+                <img class="browser-shot" src="assets/screenshots/classic-agenda.png" alt="Classic Agenda tab with rectangular TBD/Done/N/A filters">
+              </div>
             </div>
-            <div class="m-grid" style="padding-top:12px">
-              <div class="m-widget wide"><div class="m-widget-icon">📋</div><strong>Overview table</strong><span>Saved views · column filters · CSV</span></div>
-              <div class="m-widget"><div class="m-widget-icon">📅</div><strong>Upcoming events</strong><span>Live chart preview</span></div>
-              <div class="m-widget"><div class="m-widget-icon">✓</div><strong>Agenda tasks</strong><span>For You · Watchlist</span></div>
-              <div class="m-widget"><div class="m-widget-icon">📊</div><strong>Executive KPI</strong><span>Drill → Analytics Hub</span></div>
+          </div>
+          <div>
+            <div class="browser">
+              <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">modern Agenda</div></div>
+              <div class="browser-body browser-body--shot">
+                <img class="browser-shot" src="assets/screenshots/modern-agenda.png" alt="Modern Agenda workbench with pill filters and dark mode tokens">
+              </div>
             </div>
-            <div class="m-surgi-panel">
-              <strong style="color:var(--brand-light)">Surgi AI</strong>
-              <div class="bubble">Phase 1: conversational, read-only insights via AWS Bedrock.</div>
-              <div class="bubble" style="margin-left:12px">Slides in from the right — available on every page.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screenshot-row">
+        <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:12px">Home &amp; reports — classic charts vs Launch Pad widgets</h3>
+        <div class="split">
+          <div>
+            <div class="browser">
+              <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">classic Home</div></div>
+              <div class="browser-body browser-body--shot">
+                <img class="browser-shot" src="assets/screenshots/classic-home.png" alt="Classic home page with separate chart widgets and Reports section">
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="browser">
+              <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">modern Home widgets</div></div>
+              <div class="browser-body browser-body--shot">
+                <img class="browser-shot" src="assets/screenshots/modern-launch-pad.png" alt="Modern home with KPI widgets that drill into Analytics Hub">
+              </div>
             </div>
           </div>
         </div>
@@ -493,6 +494,12 @@
       <div class="section-label">Navigation</div>
       <h2>New navbar — same power, better layout</h2>
       <p class="section-desc">The old header bar and tab strip are replaced by a single glassy navbar. Every classic action has a modern home.</p>
+      <div class="browser" style="max-width:900px;margin-bottom:20px">
+        <div class="browser-bar"><div class="browser-dots"><span></span><span></span><span></span></div><div class="browser-url">modern navbar — live capture</div></div>
+        <div class="browser-body browser-body--shot">
+          <img class="browser-shot" src="assets/screenshots/modern-navbar.png" alt="Modern unified navbar with patient search, Ask Surgi, and profile menu">
+        </div>
+      </div>
       <table class="compare-table">
         <thead><tr><th>Classic</th><th>Modern</th><th>Status</th></tr></thead>
         <tbody>
